@@ -59,6 +59,7 @@ public class Principal {
                 case 'p': menuCadastroCorrentista(); break;
                 case 'n': menuCadastroCriarNovaConta(listaDeContasCorrentes,minhaAgencia); break;
                 case 'x': System.exit(0);
+                default: System.out.println("Opção inválida");
             }
         }
     }
