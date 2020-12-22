@@ -16,7 +16,13 @@ public class Principal {
      *
      * Fiz, na classe da conta corrente, um atributo static que compartilha seu comportamento com as demais instancias.
      *
-     * Isso me permitiu instanciar o número correto das contas.
+     * Isso me permitiu instanciar o número correto das contas, o que faz o teste testarNumerosAutomaticosDeContas passar.
+     *
+     * Precisei fazer um método para limpar os identificadores porque queria ter contas já instanciadas na hora
+     * que a aplicação começasse e também queria que os testes passasem todos, logo, no método com a annotation @Before, eu limpei os identificadores.
+     * Mais informações sobre estão disponíveis na classe contaCorrente, em um comentário em cima do método de limpeza, chamado vanishIdentificador.
+     *
+     *
      */
 
 
@@ -145,7 +151,7 @@ public class Principal {
         Pessoa correntista = menuCadastroCorrentista();
         ContaCorrente novaConta = new ContaCorrente(correntista, agencia);
         listaDeContaCorrente.add(novaConta);
-        System.out.println("Conta criada. Nome do Correntista: " + correntista.getNome() + " número da conta" +
+        System.out.println("Conta criada. Nome do Correntista: " + correntista.getNome() + ". Número da conta" +
                 ": " + novaConta.getNumeroDaConta());
         return novaConta;
     }
