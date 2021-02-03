@@ -53,8 +53,9 @@ public class MapaUsandoArrayOrdenado<C extends Comparable<C>, V> implements Map<
         for (int i = 0; i < this.minhaListaOrdenadaDePares.size(); i++) {
             ParChaveValor<C, V> par = this.minhaListaOrdenadaDePares.get(i);
             if (par.getChave().equals(chave)) {
+                V valorParaRetorno = par.getValor();
                 par.setValor(valor);
-                return par.getValor();  // chave já existia; nada mais a ser feito!
+                return valorParaRetorno;  // chave já existia; nada mais a ser feito!
             }
 
             if (par.getChave().compareTo(chave) > 0) {

@@ -33,7 +33,10 @@ public class MapaTest {
     }
 
     private void rodarTesteRetornoPut(Map<Long,String> mapa){
-        assertEquals(null ,mapa.put(1234L, "Qualquer Coisa"));
+
+        assertNull(mapa.put(1234L, "Qualquer Coisa"));
+        assertEquals("Qualquer Coisa", mapa.put(1234L, "sudo vim quit"));
+
     }
 
 
